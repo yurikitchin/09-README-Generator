@@ -21,27 +21,27 @@ const questions = [
     {
         type: "inupt",
         message: "Please provide instructions on how to use your project",
-        name: "Usage",
+        name: "usage",
     },
     {
         type: "inupt",
         message: "Please provide guidelines for potential contributors!",
-        name: "Contribution",
+        name: "contribution",
     },
     {
         type: "inupt",
         message: "Please provide testing instructions",
-        name: "Test",
+        name: "test",
     },
     {
         type: "inupt",
-        message: "Please proide a liscence url",
-        name: "Liscence",
+        message: "Please proide a licence url",
+        name: "licence",
     },
     {
         type: "inupt",
         message: "please provide a link to your GitHub",
-        name: "GitHub",
+        name: "github",
     },
     {
         type: "inupt",
