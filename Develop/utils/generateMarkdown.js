@@ -32,6 +32,7 @@ function generateMarkdown(data) {
   *[Liscence](#Liscence)
 
   # Deployed-links
+  ${answer.deployed}
 
   #Installation
   ${answer.installation}
