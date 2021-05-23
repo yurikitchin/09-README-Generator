@@ -7,24 +7,59 @@ function renderLicenseBadge(license) {
   if (license === 'GNU General Public Licence v3.0'){
     return '![](https://img.shields.io/badge/License-GNU--GPL-blue)'
   }
-  if (license === 'GNU General Public Licence v3.0'){
-    return '![](https://img.shields.io/badge/License-GNU--GPL-blue)'
+  if (license === 'MIT licence'){
+    return '![](https://img.shields.io/badge/License-MIT-yellow)'
+  }
+  if (license === 'BSD 2-clause "simplified" licence'){
+    return '![](https://img.shields.io/badge/License-BSD-orange)'
+  }
+  if (license === 'No Licence'){
+    return ""
   }
 }
-,, 'MIT licence', 'BSD 2-clause "simplified" licence
 //apache https://img.shields.io/badge/License-Apache-blue
 //bsd https://img.shields.io/badge/License-BSD-orange
-//MIT https://img.shields.io/badge/License-MIT-yellow
+//MIT 
 //GNU https://img.shields.io/badge/License-GNU--GPL-blue
 
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === 'Apache Licence 2.0'){
+    return "Licence documentation can be found at [https://www.apache.org/licenses/LICENSE-2.0]"
+  }
+  if (license === 'GNU General Public Licence v3.0'){
+    return "Licence documentation can be found at [https://www.gnu.org/licenses/gpl-3.0.en.html]"
+  }
+  if (license === 'MIT licence'){
+    return "Licence documentation can be found at [https://opensource.org/licenses/MIT]"
+  }
+  if (license === 'BSD 2-clause "simplified" licence'){
+    return "Licence documentation can be found at [https://choosealicense.com/licenses/bsd-2-clause/]"
+    
+  }
+  if (license === 'No Licence'){
+    return ""
+  };
+}
+  //https://www.apache.org/licenses/LICENSE-2.0
+  //https://www.gnu.org/licenses/gpl-3.0.en.html
+  //https://opensource.org/licenses/MIT
+  //https://choosealicense.com/licenses/bsd-2-clause/
+
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+const date = new Date()
+const year = date.getFullYear()
+function renderLicenseSection(licence) {
+  console.log(licence)
+  renderLicenseBadge(licence)
+  renderLicenseLink(licence)
+  return `is licenced under the ${licence}<br>`
+          
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -46,6 +81,7 @@ function generateMarkdown(data) {
   *[Test Instructions](#Test)
 
   *[Liscence](#Liscence)
+   
 
   # Deployed-links<br>
   ${data.deployed}
@@ -63,9 +99,10 @@ function generateMarkdown(data) {
   ${data.test}
 
   # Licence
-  ${data.licence}
-  ${renderLicenseBadge(data.licence)}
-
+  ${data.title} ${renderLicenseSection(data.licence)}
+  Copyright © ${year},
+  ${renderLicenseBadge(data.licence)}<br>
+  ${renderLicenseLink(data.licence)}
   # Author
   ${data.github}
   ${data.email}
