@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require("./utils/generateMarkdown")
+const generateMarkdown = require("./utils/generateMarkdown");
+const { error } = require('console');
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -40,9 +41,10 @@ const questions = [
         name: "test",
     },
     {
-        type: "inupt",
-        message: "Please proide a li cence url",
+        type: "list",
         name: "licence",
+        message: "Please select a licence",
+        choices: ['Apache Licence 2.0','GNU General Public Licence v3.0', 'MIT licence', 'BSD 2-clause "simplified" licence']
     },
     {
         type: "inupt",
@@ -57,15 +59,19 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (error) =>
+    error ? console.error(error) : console.log("You're new README.md has been created"));
+}
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
         console.log("success"),
-        console.log(answers)
-        console.log(answers.title)
-        console.log(answers.test)
+        writeToFile('README.md', generateMarkdown(data))
+        // console.log(answers)
+        // console.log(answers.title)
+        // console.log(answers.test)
         
     })
 }
