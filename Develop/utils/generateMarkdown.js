@@ -1,6 +1,11 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
+//apache https://img.shields.io/badge/License-Apache-blue
+//bsd https://img.shields.io/badge/License-BSD-orange
+//MIT https://img.shields.io/badge/License-MIT-yellow
+//GNU https://img.shields.io/badge/License-GNU--GPL-blue
+
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -13,45 +18,45 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  # Title
 
-  # Description
+  # Description<br>
+  ${data.description}
 
   # Table of Contents
 
   *[Delployed links](#Deployed-links)
 
-  *[Installation Instructions](#installation Instructions)
+  *[Installation Instructions](#installation)
 
   *[Usage](#usage)
 
-  *[Contribution Guidelines](#Contribution Guidelines)
+  *[Contribution Guidelines](#Contribution)
 
-  *[Test Instructions](#Test Instructions)
+  *[Test Instructions](#Test)
 
   *[Liscence](#Liscence)
 
-  # Deployed-links
-  ${answer.deployed}
+  # Deployed-links<br>
+  ${data.deployed}
 
-  #Installation
-  ${answer.installation}
+  # Installation Instructions<br>
+  ${data.installation}
 
-  #Usage
-  ${answer.usage}
+  # Usage<br>
+  ${data.usage}
 
-  Contribution Guidelines
-  ${answer.contribution}
+  # Contribution Guidelines<br>
+  ${data.contribution}
 
-  Test Instructions
-  ${answer.test}
+  # Test Instructions<br>
+  ${data.test}
 
-  Licence
-  ${answer.licence}
+  # Licence
+  ${data.licence}
 
-  Author
-  ${answer.github}
-  ${answer.email}
+  # Author
+  ${data.github}
+  ${data.email}
 `;
 }
 
