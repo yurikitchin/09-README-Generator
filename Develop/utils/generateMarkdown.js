@@ -1,6 +1,17 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license === 'Apache Licence 2.0'){
+    return '![](https://img.shields.io/badge/License-Apache-blue)'
+  }
+  if (license === 'GNU General Public Licence v3.0'){
+    return '![](https://img.shields.io/badge/License-GNU--GPL-blue)'
+  }
+  if (license === 'GNU General Public Licence v3.0'){
+    return '![](https://img.shields.io/badge/License-GNU--GPL-blue)'
+  }
+}
+,, 'MIT licence', 'BSD 2-clause "simplified" licence
 //apache https://img.shields.io/badge/License-Apache-blue
 //bsd https://img.shields.io/badge/License-BSD-orange
 //MIT https://img.shields.io/badge/License-MIT-yellow
@@ -53,6 +64,7 @@ function generateMarkdown(data) {
 
   # Licence
   ${data.licence}
+  ${renderLicenseBadge(data.licence)}
 
   # Author
   ${data.github}
