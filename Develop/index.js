@@ -44,7 +44,7 @@ const questions = [
         type: "list",
         name: "licence",
         message: "Please select a licence",
-        choices: ['Apache Licence 2.0','GNU General Public Licence v3.0', 'MIT licence', 'BSD 2-clause "simplified" licence']
+        choices: ['Apache Licence 2.0','GNU General Public Licence v3.0', 'MIT licence', 'BSD 2-clause "simplified" licence', 'No Licence']
     },
     {
         type: "inupt",
